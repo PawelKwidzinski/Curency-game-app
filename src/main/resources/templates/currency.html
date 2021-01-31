@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Game</title>
+    <link th:href="@{/main.css}" rel="stylesheet"/>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Currency Game</h1>
+        </header>
+        <div class="game-div" th:object="${checkGame}">
+
+            <p class="description">Guess currency rate: <span th:text="*{getRandomCurrency().getCurrencyString()}"></span> (<span th:text="*{getRandomCurrency().getCurrencyEnum().getName()}"></span>) to PLN (Polish Zloty)</p>
+
+            <div th:switch="*{isWinner()}">
+                <p class="notification" th:text="*{getMessage()}"></p>
+                <div class="currency-form">
+                    <!-- * for default case -->
+                    <form th:case="false" th:action="@{/result}" th:object="${userInput}" method="post">
+                        <label>
+                            <input class="currency-input" name="guess-currency-rate" type="text"
+                                   placeholder="Type the number: 0.00" th:field="*{input}">
+                        </label>
+                        <input class="currency-input-button" name="guess-currency-rate-submit" type="submit" value="Confirm">
+                    </form>
+                </div>
+                <div class="currency-form">
+                    <form th:case="true" th:action="@{/new-game}" method="get">
+                        <input class="currency-input-game" type="submit" value="Play Again">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+</html>
