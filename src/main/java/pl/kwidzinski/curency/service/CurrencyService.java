@@ -1,4 +1,4 @@
-package pl.kwidzinski.curency;
+package pl.kwidzinski.curency.service;
 
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -79,9 +79,5 @@ public class CurrencyService {
 
     public GamesUtils getGamesUtils() {
         return gamesUtils;
-    }
-
-    public int getNumOfAttempts() {
-        return numOfAttempts;
     }
 }

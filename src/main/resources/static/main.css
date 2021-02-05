@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, serif;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
@@ -9,9 +9,10 @@
 
 
 header {
-    height: 10vh;
+    /*height: 10vh;*/
     background-color: #434242;
     opacity: 0.8;
+    line-height: 10vh;
 }
 
 header h1 {
@@ -20,7 +21,6 @@ header h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     color: gold;
-    padding: 15px 0;
 }
 
 /*Main*/

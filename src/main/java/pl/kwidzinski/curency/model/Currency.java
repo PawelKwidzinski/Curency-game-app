@@ -14,10 +14,6 @@ public class Currency {
         return rate;
     }
 
-    void setRate(final Double rate) {
-        this.rate = rate;
-    }
-
     public CurrencyEnum getCurrencyEnum() {
         return currencyEnum;
     }
@@ -26,7 +22,4 @@ public class Currency {
         return currencyEnum.toString();
     }
 
-    void setCurrencyEnum(final CurrencyEnum currencyEnum) {
-        this.currencyEnum = currencyEnum;
-    }
 }
